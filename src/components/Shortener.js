@@ -2,6 +2,10 @@ import { useEffect, useState } from "react"
 import bgMobile from "../images/bg-shorten-mobile.svg"
 import bgDesktop from "../images/bg-shorten-desktop.svg"
 
+//react-toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const getLocalStorage = () => {
   let links = localStorage.getItem("links")
 
@@ -17,18 +21,39 @@ export default function Shortener() {
   const [links, setLinks] = useState(getLocalStorage())
   const [buttonText, setButtonText] = useState("Copy")
 
+
   //for validatig a link/url
   var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
   var urlRegex = new RegExp(expression);
+
+
+  function toastNotify(message) {
+    // return toast(message)
+    return toast.error(message, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!text) {
-      alert("Input is empty")
+      // alert("Input is empty")
+      toastNotify("Empty input!, please paste the link you want to shorten")
+
     } else if (!{ text }.text.match(urlRegex)) {
 
-      alert("URL is not valid")
+      // alert("URL is not valid")
+      toastNotify("URL is not valid")
 
     } else {
       const shortenLink = async () => {
@@ -103,6 +128,18 @@ export default function Shortener() {
           </article>
         </div>
       </section>
+      <ToastContainer
+        position="top-center"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   )
 }
