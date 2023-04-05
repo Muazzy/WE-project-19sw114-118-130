@@ -17,11 +17,19 @@ export default function Shortener() {
   const [links, setLinks] = useState(getLocalStorage())
   const [buttonText, setButtonText] = useState("Copy")
 
+  //for validatig a link/url
+  var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  var urlRegex = new RegExp(expression);
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!text) {
       alert("Input is empty")
+    } else if (!{ text }.text.match(urlRegex)) {
+
+      alert("URL is not valid")
+
     } else {
       const shortenLink = async () => {
         const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
