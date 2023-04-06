@@ -1,0 +1,7 @@
+# Abstract
+## Problem
+Long and complicated URLs not only make it difficult to share and remember but can also be visually unappealing and take up valuable space in character-limited messages. This can pose a challenge for users who want to include a URL along with other important information in their content, especially on platforms such as Twitter that have a strict character limit.
+Imagine you're a small business owner promoting a new product on Twitter. The product page on your website has a long and complicated URL that includes multiple parameters, making it difficult to share and visually unappealing. When you try to include the URL in a tweet, you realize that it takes up a significant portion of the character limit, leaving you with little room to describe your product or include relevant hashtags.
+
+## Proposed Solution
+By using a link shortener, you can create a customized and visually appealing link that takes up less space in your tweet. This allows you to include more information about your product and improve engagement with your audience. Additionally, link shorteners often offer analytics, allowing you to track the performance of your link and optimize your social media strategy.
