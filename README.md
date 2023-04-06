@@ -25,5 +25,10 @@ or
 
 that's it, ez pz.
 
+# Screenshots
+![empty url](./public/screenshots/1.png)
+![invalid url](./public/screenshots/2.png)
+![valid url](./public/screenshots/3.png)
+
 
 ### Thanks for checking out this project!.
